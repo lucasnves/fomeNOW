@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "nome": "Lucas Neves",
+      "celular": "37999278822",
+      "cpf": "099910",
+      "email": "lucas.gabriel@hotmail.com",
+      "senha": "lucas123",
+      "senhaConfirmar": "lucas123",
+      "id": 1
+    }
+  ]
+}
