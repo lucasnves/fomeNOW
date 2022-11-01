@@ -66,13 +66,51 @@ export default {
         cpf: "",
         email: "",
         password: "",
-        passwordConfirm: ""
+        passwordConfirm: "",
       }
+    }
+  },
+  methods: {
+    cadastrar() {
+      this.$router.push({ name: 'login' });
     }
   }
 }
 </script>
 
 <style scoped>
-
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  .cont {
+    margin-left: 0;
+  }
+  .right-registro {
+    background-color: rgb(216, 216, 216);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .registro-titulo {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .info-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
+  .left-registro {
+    background: rgb(64, 94, 72);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #form-login {
+    width: 310px;
+  }
 </style>

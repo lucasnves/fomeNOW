@@ -50,10 +50,48 @@ export default {
         password: ""
       }
     }
+  },
+  methods: {
+    async login() {
+      this.$router.push({ name: 'inicio '});
+    }
   }
 }
 </script>
 
 <style scoped>
-
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  .cont {
+    margin-left: 0;
+  }
+  .left-login {
+    background-color: rgb(216, 216, 216);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .login-titulo {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .info-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
+  .right-login {
+    background: rgb(64, 94, 94);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #form-login {
+    width: 300px;
+  }
 </style>
