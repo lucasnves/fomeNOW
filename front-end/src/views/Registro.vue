@@ -12,39 +12,37 @@
           </div>
           <div class="info-container">
             <label for="nome"><p>Nome</p></label>
-            <input type="text" name="nome" id="nome" placeholder="Lucas Neves" v-model="$v.form.name.$model" :class="{ 'error': $v.form.name.$error }">
-            <p v-if=" $v.form.name.$error && (this.form.name).length == 0" class="error-p"><small>Campo obrigatório!</small></p>
-            <p v-if=" (this.form.name).length < 3 && (this.form.name).length != 0" class="error-p"><small>É necessário mais de 3 caracteres!</small></p>
+            <input type="text" name="nome" id="nome" placeholder="Digite seu nome" v-model.trim="$v.form.name.$model" :class="{ 'error': $v.form.name.$error }">
+            <p v-if=" (this.form.name).length < 4 && (this.form.name).length != 0" class="error-p"><small>É necessário mais de 4 caracteres!</small></p>
           </div>
           <div class="info-container">
             <label for="celular"><p>Celular</p></label>
-            <input type="text" name="celular" id="celular" placeholder="(37)99976-8923" v-model="$v.form.celular.$model" :class="{ 'error': $v.form.celular.$error }">
-            <p v-if=" $v.form.celular.$error && (this.form.celular).length == 0" class="error-p"><small>Campo obrigatório!</small></p>
+            <input type="text" name="celular" id="celular" placeholder="Digite seu celuar" v-model.trim="$v.form.celular.$model" :class="{ 'error': $v.form.celular.$error }">
             <p v-if=" (this.form.celular).length < 11 && (this.form.celular).length != 0" class="error-p"><small>É necessário mais de 11 caracteres!</small></p>
           </div>
           <div class="info-container">
             <label for="cpf"><p>CPF</p></label>
-            <input type="text" name="cpf" id="cpf" placeholder="CPF" v-model="$v.form.cpf.$model" :class="{ 'error': $v.form.cpf.$error }">
-            <p v-if=" $v.form.cpf.$error && (this.form.cpf).length == 0" class="error-p"><small>Campo obrigatório!</small></p>
+            <input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF" v-model.trim="$v.form.cpf.$model" :class="{ 'error': $v.form.cpf.$error }">
             <p v-if=" (this.form.cpf).length < 11 && (this.form.cpf).length != 0" class="error-p"><small>É necessário mais de 11 caracteres!</small></p>
           </div>
           <div class="info-container">
             <label for="email"><p>Email</p></label>
-            <input type="email" name="email" id="email" placeholder="lucas.gabriel@gmail.com" v-model="$v.form.email.$model" :class="{ 'error': $v.form.email.$error }">
-            <p v-if=" $v.form.email.$error && (this.form.email).length == 0" class="error-p"><small>Campo obrigatório!</small></p>
-            <p v-if=" $v.form.email.$error && (this.form.email).length > 0" class="error-p"><small>Formato de email incorreto!</small></p>
+            <input type="email" name="email" id="email" placeholder="Digite seu email" v-model.trim="$v.form.email.$model" :class="{ 'error': $v.form.email.$error }">
+            <p v-if=" $v.form.email.$error && (this.form.email).length > 0" class="error-p"><small>Digite o email corretamente!</small></p>
           </div>
           <div class="info-container">
             <label for="password"><p>Senha</p></label>
-            <input type="password" name="password" id="password" placeholder="•••••••••••" v-model="$v.form.password.$model" :class="{ 'error': $v.form.password.$error }">
-            <p v-if=" $v.form.password.$error && (this.form.password).length == 0" class="error-p"><small>Campo obrigatório!</small></p>
+            <input type="password" name="password" id="password" placeholder="•••••••••••" v-model.trim="$v.form.password.$model" :class="{ 'error': $v.form.password.$error }">
             <p v-if=" (this.form.password).length < 6 && (this.form.password).length != 0" class="error-p"><small>É necessário mais de 6 caracteres!</small></p>
           </div>
           <div class="info-container">
             <label for="passwordConfirm"><p>Confirme a senha</p></label>
-            <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="•••••••••••" v-model="$v.form.passwordConfirm.$model" :class="{ 'error': $v.form.passwordConfirm.$error }">
-            <p v-if=" $v.form.passwordConfirm.$error && (this.form.passwordConfirm).length == 0" class="error-p"><small>Campo obrigatório!</small></p>
+            <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="•••••••••••" v-model.trim="$v.form.passwordConfirm.$model" :class="{ 'error': $v.form.passwordConfirm.$error }">
             <p v-if=" $v.form.passwordConfirm.$error && (this.form.passwordConfirm).length > 0" class="error-p"><small>Senhas diferentes!</small></p>
+          </div>
+
+          <div v-if="$v.form.$error" class="campo-obrigatorio">
+            <p>CAMPOS OBRIGATÓRIOS!</p>
           </div>
 
           <div class="info-container">
@@ -72,7 +70,6 @@
 import { required, minLength, email, sameAs } from "vuelidate/lib/validators";
 
 export default {
-  name: 'Registro',
   data() {
     return {
       form: {
@@ -87,7 +84,7 @@ export default {
   },
   validations: {
     form: {
-      name: { required, minLength: minLength(3) },
+      name: { required, minLength: minLength(4) },
       celular: { required, minLength: minLength(11) },
       cpf: { required, minLength: minLength(11) },
       email: { required, email },
@@ -97,7 +94,6 @@ export default {
   },
   methods: {
     async cadastrar() {
-      
       this.$v.form.$touch();
       if (this.$v.$invalid) return;
 
@@ -122,14 +118,7 @@ export default {
 
       //enviando a rota para login
       this.$router.push({ name: 'login' });
-    },
-    getValidation(field) {
-      if(this.$v.form.$dirty === false) {
-        return null;
-      }
-
-      return !this.$v.form[field].$error;
-    },
+    }
   }
 }
 </script>
@@ -176,9 +165,21 @@ export default {
     outline: none;
   }
   .error {
-    border: 1.5px solid rgb(209, 13, 13);
+    border: 1.7px solid rgb(247, 48, 48);
   }
   .error-p {
-    color: rgb(209, 13, 13);
+    color: rgb(247, 48, 48);
+  }
+  .campo-obrigatorio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    padding: 8px;
+    background: rgb(253, 221, 221);
+    border: 1.7px solid rgb(247, 48, 48);
+    color: rgb(247, 48, 48);
+    font-weight: 600;
+    margin: 12px 0px;
   }
 </style>
