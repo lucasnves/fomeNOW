@@ -69,7 +69,7 @@ export default {
       const req = await fetch(`http://localhost:3000/users/?email=${this.form.email}`, {
         method: "GET",
       });
-      const user = await req.json()
+      const user = await req.json();
 
       if(!user || !user[0] || !user[0].email){
         this.limparInput();

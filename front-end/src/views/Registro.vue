@@ -97,6 +97,10 @@ export default {
       this.$v.form.$touch();
       if (this.$v.$invalid) return;
 
+      if(await this.emailRegistrado()){
+        return
+      }
+
       const data = {
         nome: this.form.name,
         celular: this.form.celular,
@@ -118,6 +122,18 @@ export default {
 
       //enviando a rota para login
       this.$router.push({ name: 'login' });
+    },
+    async emailRegistrado() {
+      const reqemail = await fetch(`http://localhost:3000/users/?email=${this.form.email}`, {
+        method: "GET",
+      });
+      const user = await reqemail.json();
+
+      if(user[0]) {
+        return true;
+      }
+      
+      return false;
     }
   }
 }
