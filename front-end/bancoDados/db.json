@@ -8,6 +8,15 @@
       "senha": "lucas123",
       "senhaConfirmar": "lucas123",
       "id": 1
+    },
+    {
+      "nome": "Lucas Nevess",
+      "celular": "37999278822",
+      "cpf": "08882345343",
+      "email": "lucas.aaaa@hotmail.com",
+      "senha": "123456",
+      "senhaConfirmar": "123456",
+      "id": 2
     }
   ]
 }
