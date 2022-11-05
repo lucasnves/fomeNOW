@@ -48,7 +48,6 @@ export default {
   align-items: center;
   justify-content: space-between;
 
-  background: rgb(226, 226, 226);
   padding: 15px;
   border-radius: 10px;
   border: 1.7px solid grey;
@@ -61,13 +60,17 @@ export default {
 
   width: 480px;
 }
+.nome-site a {
+  color: gray;
+}
 .nome-site h3 {
   font-weight: bold;
-  color: rgb(15, 54, 112);
 }
 .nome-site span {
   font-weight: bold;
-  color: rgb(243, 243, 3);
+}
+.rotas a {
+  color: gray;;
 }
 .rotas li {
   display: inline-block;
@@ -79,7 +82,5 @@ export default {
   justify-content: space-between;
   width: 300px;
 }
-
-
 
 </style>
