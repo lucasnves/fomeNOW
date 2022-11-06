@@ -13,13 +13,48 @@
   "categorias": [
     {
       "nome": "Lanches",
-      "imagem": "../assets/categorias/hamburguer.webp",
+      "imagem": "@/assets/categorias/hamburguer.webp",
       "id": 1
     },
     {
       "nome": "Pizza",
-      "imagem": "../assets/categorias/hamburguer.webp",
+      "imagem": "@/assets/categorias/favicon.png",
       "id": 2
+    },
+    {
+      "nome": "Bebidas",
+      "imagem": "@/assets/categorias/favicon.png",
+      "id": 3
+    },
+    {
+      "nome": "Mercado",
+      "imagem": "@/assets/categorias/favicon.png",
+      "id": 5
+    },
+    {
+      "nome": "Japonesa",
+      "imagem": "@/assets/categorias/favicon.png",
+      "id": 6
+    },
+    {
+      "nome": "Sorvetes",
+      "imagem": "@/assets/categorias/favicon.png",
+      "id": 7
+    },
+    {
+      "nome": "Açaí",
+      "imagem": "@/assets/categorias/favicon.png",
+      "id": 8
+    },
+    {
+      "nome": "Doces e Bolos",
+      "imagem": "@/assets/categorias/favicon.png",
+      "id": 9
+    },
+    {
+      "nome": "Variados",
+      "imagem": "@/assets/categorias/favicon.png",
+      "id": 10
     }
   ]
 }
