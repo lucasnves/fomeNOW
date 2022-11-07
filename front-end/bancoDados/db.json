@@ -56,5 +56,109 @@
       "imagem": "@/assets/categorias/favicon.png",
       "id": 10
     }
+  ],
+  "restaurantes": [
+    {
+      "nome": "iHamburguer Agora",
+      "descricao": "Hamburgueria com ótimas opções",
+      "estrelas": 2,
+      "categoria": "Lanches",
+      "comidas": {
+        "hamburguer": {
+          "X-Tudo": "Carne, Alface, Milho",
+          "X-Bacon": "Bancon, Milho, Frango"
+        },
+        "bebidas": {
+          "Agua": "Agua natural",
+          "Refrigerante": "Coca-cola"
+        }
+      },
+      "id": 1
+    },
+    {
+      "nome": "ddddddddd",
+      "descricao": "Hamburgueria com ótimas opções",
+      "estrelas": 2,
+      "categoria": "Lanches",
+      "comidas": {
+        "hamburguer": {
+          "X-Tudo": "Carne, Alface, Milho",
+          "X-Bacon": "Bancon, Milho, Frango"
+        },
+        "bebidas": {
+          "Agua": "Agua natural",
+          "Refrigerante": "Coca-cola"
+        }
+      },
+      "id": 3
+    },
+    {
+      "nome": "cccccc",
+      "descricao": "Hamburgueria com ótimas opções",
+      "estrelas": 2,
+      "categoria": "Lanches",
+      "comidas": {
+        "hamburguer": {
+          "X-Tudo": "Carne, Alface, Milho",
+          "X-Bacon": "Bancon, Milho, Frango"
+        },
+        "bebidas": {
+          "Agua": "Agua natural",
+          "Refrigerante": "Coca-cola"
+        }
+      },
+      "id": 4
+    },
+    {
+      "nome": "bbbbbb",
+      "descricao": "Hamburgueria com ótimas opções",
+      "estrelas": 2,
+      "categoria": "Lanches",
+      "comidas": {
+        "hamburguer": {
+          "X-Tudo": "Carne, Alface, Milho",
+          "X-Bacon": "Bancon, Milho, Frango"
+        },
+        "bebidas": {
+          "Agua": "Agua natural",
+          "Refrigerante": "Coca-cola"
+        }
+      },
+      "id": 5
+    },
+    {
+      "nome": "aaaaaaaaa",
+      "descricao": "Hamburgueria com ótimas opções",
+      "estrelas": 2,
+      "categoria": "Lanches",
+      "comidas": {
+        "hamburguer": {
+          "X-Tudo": "Carne, Alface, Milho",
+          "X-Bacon": "Bancon, Milho, Frango"
+        },
+        "bebidas": {
+          "Agua": "Agua natural",
+          "Refrigerante": "Coca-cola"
+        }
+      },
+      "id": 6
+    },
+    {
+      "nome": "HamburguerFlix",
+      "descricao": "Hamburgueria com os melhores saboresaaaaaaaaa dfsfdsf dsfdsf dsfdsf sdfsdssds sdfdsfsfsf sdfsdf sdfdsf dsdf  dsfsfsdf",
+      "estrelas": 4,
+      "categoria": "Pizza",
+      "comidas": {
+        "hamburguer": {
+          "X-StrangerThings": "Carne, Alface, Pão de Hamburguer",
+          "X-Dark": "Frango desfiado, Bacon, Milho, Frango"
+        },
+        "bebidas": {
+          "Suco": "Suco de Laranja",
+          "Refrigerante": "Coca-cola"
+        }
+      },
+      "id": 2
+    }
   ]
 }

@@ -9,7 +9,7 @@
         <div class="rotas">
           <ul>
             <li><a href="/">Início</a></li>
-            <li><a href="/">Restaurantes</a></li>
+            <li><a href="/restaurantes">Restaurantes</a></li>
             <li><a href="/">Cupons</a></li>
           </ul>
         </div>

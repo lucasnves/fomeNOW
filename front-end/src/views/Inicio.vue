@@ -11,7 +11,7 @@
                 <button>Buscar</button>
             </div>
             <div class="carrouselCat">
-                <div class="categorias" v-for="(categoria) in categorias" :key="categoria.id">
+                <div class="categorias" v-for="(categoria) in categorias" :key="categoria.id" @click="goToRestaurente(categoria.id)">
                     <div class="categoria">
                         <div class="cat-restaurante">
                             <h3>{{ categoria.nome }}</h3>
@@ -67,6 +67,9 @@ export default {
             method: "GET",
         });
         return await req.json();
+    },
+    goToRestaurente(catId) {
+        this.$router.push({ name: 'restaurantes', params: { catId } });
     }
   }
 }
@@ -88,24 +91,11 @@ export default {
 .pesquisa {
     margin: 60px;
 }
-.pesquisa input {
-    border: 1px solid grey;
-    border-radius: 2px;
-    margin: 10px;
-    height: 50px;
-    padding: 10px;
-    width: 550px;
-}
-.pesquisa button {
-    width: 120px;
-    height: 50px;
-}
 .carrouselCat {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 1000px;
-    background: red;
     flex-wrap: wrap;
 }
 .categorias{
@@ -114,10 +104,16 @@ export default {
     margin: 3px;
     background: rgb(114, 114, 114);
     border-radius: 15px;
+    transition: .3s;
+}
+
+.categorias:hover {
+    transform: scale(1.1);
 }
 .categoria {
     position: relative;
 }
+
 .categoria:before {
   content: ' ';
   display: block;
