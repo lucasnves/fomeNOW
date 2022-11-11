@@ -1,26 +1,35 @@
 <template>
-    <div class="vh-100">
+    <div class="container-vInicio">
         <NavBar/>
-        <div class="inicio-container">
-            <div class="inicio-topo">
+        <div class="container-vInicio-comeco">
+
+            <div class="vInicio-comeco-textos">
                 <h1>O que deseja a todo momento!</h1>
-                <p>Peça de onde estiver. Comida? É aqui!</p>
+                <p class="mt-3">Peça de onde estiver. Comida? É aqui!</p>
             </div>
-            <div class="pesquisa">
+
+            <div class="vInicio-comeco-pesquisa">
                 <input type="text" placeholder="Busque algo">
                 <button>Buscar</button>
             </div>
-            <div class="carrouselCat">
-                <div class="categorias" v-for="(categoria) in categorias" :key="categoria.id" @click="goToRestaurente(categoria.id)">
-                    <div class="categoria">
-                        <div class="cat-restaurante">
-                            <h3>{{ categoria.nome }}</h3>
+
+            <div class="vInicio-comeco-carouselCategoria">
+                <div><h3>Categorias:</h3></div>
+                <div class="vInicio-carouselCategoria">
+                    <div class="vInicio-carouselCategoria-categorias" v-for="(categoria) in categorias" :key="categoria.id" @click="goToRestaurente(categoria.id)">
+                        <div class="vInicio-carouselCategoria-categoria">
+                            <span>{{ categoria.nome }}</span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="cards">
+
+        </div>
+
+        <div class="container-vInicio-meio">
+            
+            <div class="vInicio-meio-cards">
                 <div class="card">
                     <div class="card-img">
                         <img src="@/assets/cards/registre.jpg" alt="">
@@ -53,13 +62,15 @@ export default {
   data() {
     return {
         categorias: [],
+        slide: 0,
+        sliding: null,
     }
   },
   async created() {
     this.categorias = await this.getCategorias();
   },
   components: {
-    NavBar
+    NavBar,
   },
   methods: {
     async getCategorias() {
@@ -80,73 +91,86 @@ export default {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
-    outline: none;
+    font-family: 'Poppins', sans-serif;
 }
-.inicio-container {
+/*  CONTAINER DO COMEÇO */
+.container-vInicio {
+    background: rgb(245, 245, 245);
+}
+.container-vInicio-comeco {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px 0 40px 0;
 }
-.pesquisa {
-    margin: 60px;
-}
-.carrouselCat {
+.vInicio-comeco-textos {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 1000px;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.vInicio-comeco-pesquisa {
+    margin: 25px 0 50px 0;
+}
+.vInicio-comeco-pesquisa input {
+    border: 1px solid grey;
+    border-radius: 3px;
+    margin: 10px;
+    height: 50px;
+    padding: 10px;
+    width: 550px;
+}
+.vInicio-comeco-pesquisa button {
+    background: #1C3879;
+    border: none;
+    border-radius: 3px;
+    width: 120px;
+    height: 50px;
+    color: white;
+    font-weight: 500;
+}
+.vInicio-comeco-carouselCategoria {
+    display: flex;
+    width: 65%;
+    flex-direction: column;
+}
+.vInicio-comeco-carouselCategoria h3 {
+    padding-left: 4px;
+    font-size: 32px;
+    font-weight: 600;
+}
+.vInicio-carouselCategoria {
+    display: flex;
+    align-items: center;
     flex-wrap: wrap;
 }
-.categorias{
-    width: 240px;
-    height: 145px;
-    margin: 3px;
-    background: rgb(114, 114, 114);
-    border-radius: 15px;
-    transition: .3s;
+.vInicio-carouselCategoria-categorias {
+    padding: 5px;
 }
-
-.categorias:hover {
-    transform: scale(1.1);
-}
-.categoria {
-    position: relative;
-}
-
-.categoria:before {
-  content: ' ';
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.3;
-  border-radius: 15px;
-  background-image: url('../assets/categorias/hamburguer.webp');
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  background-size: cover;
-}
-
-.cat-restaurante {
-  position: relative;
-  height: 145px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-weight: bold;
-}
-.cat-restaurante h3 {
-    font-weight: bold;
+.vInicio-carouselCategoria-categoria {
+    background: rgb(13, 34, 78);
     color: white;
+    border-radius: 10px;
+    padding: 10px;
+    transition: .2s;
+}
+.vInicio-carouselCategoria-categoria h3 {
+    font-size: 20px;
+    font-weight: 500;
 }
 
-.cards {
-    width: 1000px;
-    margin: 50px;
+.vInicio-carouselCategoria-categoria:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/*  CONTAINER DO MEIO */
+.container-vInicio-meio {
+    background: rgb(240, 240, 240);
+}
+.vInicio-meio-cards {
+    width: 100%;
+    padding: 80px 0 30px 0;
     display: flex;
     justify-content: center;
 }

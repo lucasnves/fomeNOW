@@ -4,6 +4,7 @@ import Inicio from '../views/Inicio.vue'
 import Login from '../views/Login.vue'
 import Registro from '../views/Registro.vue'
 import Restaurantes from '../views/Restaurantes.vue'
+import Restaurante from '../views/Restaurante.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/restaurantes',
     name: 'restaurantes',
     component: Restaurantes
+  },
+  {
+    path: '/restaurante',
+    name: 'restaurante',
+    component: Restaurante
   },
 ]
 

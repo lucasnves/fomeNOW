@@ -61,8 +61,10 @@
     {
       "nome": "iHamburguer Agora",
       "descricao": "Hamburgueria com ótimas opções",
-      "estrelas": 2,
+      "estrelas": "4,2",
       "categoria": "Lanches",
+      "duracao_comida": "40-50min",
+      "taxa_entrega": "R$ 4,99",
       "comidas": {
         "hamburguer": {
           "X-Tudo": "Carne, Alface, Milho",
@@ -78,8 +80,10 @@
     {
       "nome": "ddddddddd",
       "descricao": "Hamburgueria com ótimas opções",
-      "estrelas": 2,
+      "estrelas": "2,3",
       "categoria": "Lanches",
+      "duracao_comida": "40-50min",
+      "taxa_entrega": "R$ 4,99",
       "comidas": {
         "hamburguer": {
           "X-Tudo": "Carne, Alface, Milho",
@@ -94,26 +98,52 @@
     },
     {
       "nome": "cccccc",
-      "descricao": "Hamburgueria com ótimas opções",
-      "estrelas": 2,
+      "descricao": "Hamburgueria com ótims ",
+      "estrelas": "5,0",
       "categoria": "Lanches",
-      "comidas": {
-        "hamburguer": {
-          "X-Tudo": "Carne, Alface, Milho",
-          "X-Bacon": "Bancon, Milho, Frango"
+      "duracao_comida": "40-50min",
+      "taxa_entrega": "R$ 4,99",
+      "comidas": [
+        {
+          "nome_comida": "Hamburger Cheddar",
+          "descricao_comida": "Pão, Maionese, Alface, Tomate, Bife artesal 150g, Mussarela e Bacon",
+          "preco_comida": "R$ 22,00",
+          "id_comida": 1
         },
-        "bebidas": {
-          "Agua": "Agua natural",
-          "Refrigerante": "Coca-cola"
+        {
+          "nome_comida": "Hamburger Barbecue",
+          "descricao_comida": "Pão, Maionese, Alface, Tomate, Bife 150g, Mussarela, Bacon, Barbecue",
+          "preco_comida": "R$ 22,00",
+          "id_comida": 2
+        },
+        {
+          "nome_comida": "Smashinho",
+          "descricao_comida": "Pão da casa, maionese Trash, 1x smash burger 90gr., 2x queijo prato",
+          "preco_comida": "R$ 19,50",
+          "id_comida": 3
+        },
+        {
+          "nome_comida": "JUNKY SMASH",
+          "descricao_comida": "Pão da casa, bacon, 2x smash burgers 90gr., 2x queijo cheddar e crispy de cebola.",
+          "preco_comida": "R$ 28,50",
+          "id_comida": 4
+        },
+        {
+          "nome_comida": "JUNKY SMASH",
+          "descricao_comida": "Pão da casa, bacon, 2x smash burgers 90gr., 2x queijo cheddar e crispy de cebola.",
+          "preco_comida": "R$ 28,50",
+          "id_comida": 4
         }
-      },
+      ],
       "id": 4
     },
     {
       "nome": "bbbbbb",
       "descricao": "Hamburgueria com ótimas opções",
-      "estrelas": 2,
+      "estrelas": "3,4",
       "categoria": "Lanches",
+      "duracao_comida": "40-50min",
+      "taxa_entrega": "R$ 4,99",
       "comidas": {
         "hamburguer": {
           "X-Tudo": "Carne, Alface, Milho",
@@ -129,8 +159,10 @@
     {
       "nome": "aaaaaaaaa",
       "descricao": "Hamburgueria com ótimas opções",
-      "estrelas": 2,
+      "estrelas": "4,3",
       "categoria": "Lanches",
+      "duracao_comida": "40-50min",
+      "taxa_entrega": "R$ 4,99",
       "comidas": {
         "hamburguer": {
           "X-Tudo": "Carne, Alface, Milho",
@@ -146,8 +178,10 @@
     {
       "nome": "HamburguerFlix",
       "descricao": "Hamburgueria com os melhores saboresaaaaaaaaa dfsfdsf dsfdsf dsfdsf sdfsdssds sdfdsfsfsf sdfsdf sdfdsf dsdf  dsfsfsdf",
-      "estrelas": 4,
+      "estrelas": "3,4",
       "categoria": "Pizza",
+      "duracao_comida": "40-50min",
+      "taxa_entrega": "R$ 4,99",
       "comidas": {
         "hamburguer": {
           "X-StrangerThings": "Carne, Alface, Pão de Hamburguer",
