@@ -48,7 +48,7 @@
         <div class="container-vRestaurante-comidas">
             <div class="vRestaurante-comida">
                 <div v-for="(comida) in comidas" :key="comida.id_comida">
-                    <b-card class="vRestaurante-card">
+                    <b-card class="vRestaurante-card" @click="pedirComida(comida.id_comida-1)">
                         <div class="vRestaurante-card-infos">
                             <div>
                                 <h1>{{comida.nome_comida}}</h1>
@@ -60,7 +60,27 @@
                 </div>
             </div>
         </div>
+
         <!-- http://localhost:3000/restaurantes?q=Alfa -->
+
+        <b-modal centered size="xl" ref="modalComida" hide-footer :title='restaurante.nome' >
+            <div class="d-flex justify-content-space">
+                <div>
+                    <img src="@/assets/semimagem.png" alt="" style="width: 500px" />
+                </div>
+                <div class="vRestaurante-modal-infos">
+                    <div class="vRestaurante-modal-info">
+                        <h1>{{ comida.nome_comida }}</h1>
+                        <h3>{{ restaurante.duracao_comida }} • <span>{{ restaurante.taxa_entrega }}</span></h3>
+                        <h2>{{ comida.descricao_comida }}</h2>
+                    </div>
+                    <div class="vRestaurante-modal-botoes">
+                        <b-button variant="outline-secondary" style="margin-right: 8px" @click="hideModal">Voltar</b-button>
+                        <b-button class="vRestaurante-modal-confirmar" @click="">Adicionar  {{ comida.preco_comida }}</b-button>
+                    </div>
+                </div>
+            </div>
+        </b-modal>
     </div>
 </template>
 
@@ -75,6 +95,7 @@ export default {
         return {
             restaurante: [],
             comidas: [],
+            comida: [],
         }
     },
     async created() {
@@ -97,6 +118,13 @@ export default {
             localStorage.setItem('restaurante', JSON.stringify(res));
             return res[0];
         },
+        async pedirComida(id) {
+            this.comida = this.comidas[id];
+            this.$refs.modalComida.show();
+        },
+        hideModal() {
+            this.$refs.modalComida.hide();
+        }
     }
 }
 </script>
@@ -280,8 +308,53 @@ export default {
 
 .vRestaurante-card-infos h3 {
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
+    color: #50a773;
+}
+.vRestaurante-modal-infos {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.vRestaurante-modal-info h1 {
+    font-size: 24px;
+    padding: 0px 20px 2px 20px;
+}
+.vRestaurante-modal-info h2 {
+    font-size: 16px;
+    padding: 0px 20px;
     color: rgb(87, 87, 87);
+}
+.vRestaurante-modal-info h3 {
+    font-size: 14px;
+    padding: 0px 20px 15px 20px;
+    color: rgb(87, 87, 87);
+}
+.vRestaurante-modal-info span {
+    color: #f1c01e;
+}
+
+.vRestaurante-modal-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.vRestaurante-modal-botoes {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+}
+.vRestaurante-modal-confirmar {
+    background: transparent;
+    color: #1C3879;
+    border: 1px solid #1C3879;
+}
+.vRestaurante-modal-confirmar:hover {
+    background: #1C3879;
+    color: white;
 }
 
 </style>
